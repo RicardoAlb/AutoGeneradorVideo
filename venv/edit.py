@@ -34,16 +34,16 @@ def convertir_texto_audio(texto, nombre_archivo):
 
     with WavReader("temp_audio.wav") as reader:
         with WavWriter("salida_modificado.wav", reader.channels, reader.samplerate) as writer:
-            phasevocoder(reader.channels, speed=0.95).run(reader, writer)
+            phasevocoder(reader.channels, speed=1).run(reader, writer)
 
     audio_modificado = AudioSegment.from_wav("salida_modificado.wav")
 
     # Aumentar el volumen del audio modificado en 6 dB
     audio_modificado = audio_modificado.apply_gain(15)
 
-    # Guardar el audio modificado
+    # Guardar el audio modificado, cambiar a audio_modificado si queremos modificar la voz
     nombre_archivo_modificado = "salida_modificado.mp3"
-    audio_modificado.export(nombre_archivo_modificado, format="mp3")
+    audio.export(nombre_archivo_modificado, format="mp3")
 
     print(f"Se ha generado el archivo de audio modificado '{nombre_archivo_modificado}'.")
 

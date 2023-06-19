@@ -26,17 +26,17 @@ def generar_video(video_path, audio_path, duracion_video, nombre_video):
     # Guardar el video resultante
     video.write_videofile(nombre_video, codec='libx264', audio_codec="aac", fps=fps)
 
-Pexels.descargar_video(Claves.api_key_pexels, query="libertad financiera")
+Pexels.descargar_video(Claves.api_key_pexels, query="healthy meal")
 #main.generate_image("misterious, scary and dark demon, H.P. Lovecraf style")
 
-texto="Imagina una vida llena de abundancia y prosperidad. El dinero fluye hacia ti en cantidades ilimitadas. Pero recuerda, la motivación es la clave para alcanzar el éxito financiero. Sin esfuerzo y dedicación, el dinero se escapa de nuestras manos."
+texto="Hola, bienvenido a un video de hábitos saludables"
 edit.convertir_texto_audio(texto, "salida.mp3")
 
 # Ejemplo de uso
 video_path = r"D:\autoYoutube\venv\video_descargado.mp4"
 audio_path = r"D:\autoYoutube\venv\salida_modificado.mp3"
-duracion_video = 10  # Duración en segundos
-nombre_video = 'video_generado.mp4'
+duracion_video = 4  # Duración en segundos, OJO TIENE QUE SER MENOR QUE EL TEXTO, SINO DA ERROR.
+nombre_video = 'VIDEOFINAL.mp4'
 
 generar_video(video_path, audio_path, duracion_video, nombre_video)
 Subtitulos.agregar_subtitulos(r"D:\autoYoutube\venv\video_generado.mp4", r"D:\autoYoutube\venv\video_generado.mp4", texto, duracion_video)
